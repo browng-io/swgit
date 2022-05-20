@@ -117,18 +117,18 @@ describe('switch_control:user update info', function () {
 
 describe('switch_control:delete user', function () {
   it(`should return ${USERNAME_EMPTY} when the value is undifined`, function () {
-    const value = deleteUser({ username: undefined })
+    const value = deleteUser(undefined)
     assert.equal(value, USERNAME_EMPTY)
   });
   it(`should return ${USER_DOES_NOT_EXISTS} when user is not found`, function () {
     const user = randomUser()
-    const value = deleteUser({ username: user.username })
+    const value = deleteUser(user.username)
     assert.equal(value, USER_DOES_NOT_EXISTS)
   });
   it(`should return true when in happy case`, function () {
     const userData = randomUser()
     testCreateUserOk(userData).then(_ => {
-      const value = deleteUser({ username: userData.username })
+      const value = deleteUser(userData.username)
       const userInfo = getUserInfo({ username: userData.username })
       assert.ok(value == true && userInfo == USER_DOES_NOT_EXISTS)
     })
