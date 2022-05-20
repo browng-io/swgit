@@ -8,10 +8,9 @@ const {
 } = require('../../constants/global')
 
 
-function deleteUser(objc) {
+function deleteUser(username) {
     const store = new Store(db)
-    const {username} = objc;
-    if (!Boolean(username)) {
+    if (!Boolean(username) || username === true) {
         log.debug.error(USERNAME_EMPTY)
         return USERNAME_EMPTY
     }
