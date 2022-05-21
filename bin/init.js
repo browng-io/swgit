@@ -1,7 +1,8 @@
-const { DB_CONFIG_PATH, DB_CONFIG_FILENAME } = require("../src/constants/config");
 const fs = require('fs');
 const path = require("path");
-let pathFolder = path.resolve(process.cwd(), DB_CONFIG_PATH);
+const homedir = require('os').homedir();
+const { DB_CONFIG_PATH, DB_CONFIG_FILENAME } = require("../src/constants/config");
+let pathFolder = path.resolve(homedir, DB_CONFIG_PATH);
 
 function initSystem() {
     return new Promise((resolve, reject) => { 
@@ -35,7 +36,7 @@ function checkInitSystem() {
     const pathFile = path.resolve(pathFolder, DB_CONFIG_FILENAME)
     return fs.existsSync(pathFile)
 }
-
+console.log(pathFolder)
 module.exports = {
     checkInitSystem,
     initSystem
