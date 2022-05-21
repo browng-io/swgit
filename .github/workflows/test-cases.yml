@@ -19,8 +19,8 @@ jobs:
         include:
           - os: windows-latest
             run: |
-              mkdir -p swgit_store/db
-              xcopy /y /F src\db_store\db\example_db.json swgit_store\db\swgit.json*
+              mkdir -p ~\.swgit_store/db
+              xcopy /y /F src\db_store\db\example_db.json ~\.swgit_store\db\swgit.json*
             run_prepare_test:
               mkdir -p test/data
             run_prepare_ssh: |
