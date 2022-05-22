@@ -19,12 +19,12 @@ jobs:
         include:
           - os: windows-latest
             run: |
-              mkdir -p ~/.swgit_store/db
+              mkdir -p ~\.swgit_store\db
               xcopy /y /F src\db_store\db\example_db.json ~\.swgit_store\db\swgit.json*
             run_prepare_test:
-              mkdir -p test/data
+              mkdir -p test\data
             run_prepare_ssh: |
-              mkdir ~/.ssh
+              mkdir ~\.ssh
               xcopy /y /F test\config\config_test "%userprofile%\.ssh\config\"
           - os: ubuntu-latest
             run: |
