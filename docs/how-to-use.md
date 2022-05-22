@@ -107,6 +107,19 @@ swgit --update.<name>=<value>
 | isDefault  |string|optional   |
 | email  |string|optional   |
 
+### Delete user
+- Example:
+```
+swgit --delete=<username>
+# or
+swgit -d=<username>
+```
+- Description:
+
+|name   |type  | required  |
+|---|---|---|
+| `delete` or `d`  |string|true   |
+
 ## Switch default user
 - Example:
 ```
