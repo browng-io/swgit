@@ -1,5 +1,6 @@
 
 const assert = require('assert');
+const { runCommandWithGit } = require('./util');
 
 let testCases = [
     {
