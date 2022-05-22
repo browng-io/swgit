@@ -19,17 +19,15 @@ jobs:
         include:
           - os: windows-latest
             run: |
-              mkdir -p swgit_store/db
-              xcopy /y /F src\db_store\db\example_db.json swgit_store\db\swgit.json*
+              mkdir -p C:\Users\runneradmin\.swgit_store\db
+              xcopy /y /F src\db_store\db\example_db.json C:\Users\runneradmin\.swgit_store\db\swgit.json*
             run_prepare_test:
-              mkdir -p test/data
-            run_prepare_ssh: |
-              mkdir ~/.ssh
-              xcopy /y /F test\config\config_test "%userprofile%\.ssh\config\"
+              mkdir -p test\data
+            run_prepare_ssh: mkdir C:\Users\runneradmin\.ssh
           - os: ubuntu-latest
             run: |
-              mkdir -p swgit_store/db
-              cp -i src/db_store/db/example_db.json swgit_store/db/swgit.json 
+              mkdir -p ~/.swgit_store/db
+              cp -i src/db_store/db/example_db.json ~/.swgit_store/db/swgit.json 
             run_prepare_test:
               mkdir test/data
             run_prepare_ssh: |
@@ -37,8 +35,8 @@ jobs:
               cp -i test/config/config_test ~/.ssh/config
           - os: macos-12
             run: |
-              mkdir -p swgit_store/db
-              cp -i src/db_store/db/example_db.json swgit_store/db/swgit.json 
+              mkdir -p ~/.swgit_store/db
+              cp -i src/db_store/db/example_db.json ~/.swgit_store/db/swgit.json 
             run_prepare_test:
               mkdir test/data
             run_prepare_ssh: cp -i test/config/config_test ~/.ssh/config
