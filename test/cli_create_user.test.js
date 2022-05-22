@@ -15,7 +15,6 @@ let testCases = [
         },
         check:(data) => {
             let stringData = data.toString('utf8')
-            console.log(stringData)
             assert.notEqual(stringData, '')
             assert.notEqual(stringData, null)
             assert.notEqual(stringData, undefined)
@@ -26,7 +25,7 @@ let testCases = [
         name:'username empty',
         stub: (check)=> {
             let user = randomUser()
-            return runCommandWithGit(`-a.username -a.email=${user.email}`).then(data => {
+            return runCommandWithGit(`-a.email=${user.email}`).then(data => {
                 check(data)
             })
         },
