@@ -23,9 +23,7 @@ jobs:
               xcopy /y /F src\db_store\db\example_db.json C:\Users\runneradmin\.swgit_store\db\swgit.json*
             run_prepare_test:
               mkdir -p test\data
-            run_prepare_ssh: |
-              mkdir C:\Users\runneradmin\.ssh
-              xcopy /y /F test\config\config_test C:\Users\runneradmin\.ssh\config
+            run_prepare_ssh: mkdir C:\Users\runneradmin\.ssh
           - os: ubuntu-latest
             run: |
               mkdir -p ~/.swgit_store/db
