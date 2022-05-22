@@ -39,10 +39,44 @@ let testCases = [
         }
     },
     {
+        name:'username empty with true value',
+        stub: (check)=> {
+            let user = randomUser()
+            return runCommandWithGit(`-a.username -a.email=${user.email}`).then(data => {
+                check(data)
+            })
+        },
+        check:(data) => {
+            let stringData = data.toString('utf8')
+            console.log(stringData)
+            assert.notEqual(stringData, '')
+            assert.notEqual(stringData, null)
+            assert.notEqual(stringData, undefined)
+            assert.equal(stringData.includes(toMessage(USERNAME_EMPTY)), true)
+        }
+    },
+    {
         name:'email empty',
         stub: (check)=> {
             let user = randomUser()
             return runCommandWithGit(`-a.username=${user.username}`).then(data => {
+                check(data)
+            })
+        },
+        check:(data) => {
+            let stringData = data.toString('utf8')
+            console.log(stringData)
+            assert.notEqual(stringData, '')
+            assert.notEqual(stringData, null)
+            assert.notEqual(stringData, undefined)
+            assert.equal(stringData.includes(toMessage(EMAIL_EMPTY)), true)
+        }
+    },
+    {
+        name:'email empty with true value',
+        stub: (check)=> {
+            let user = randomUser()
+            return runCommandWithGit(`-a.username=${user.username} -a.email`).then(data => {
                 check(data)
             })
         },
