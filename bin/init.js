@@ -36,7 +36,7 @@ function checkInitSystem() {
     const pathFile = path.resolve(pathFolder, DB_CONFIG_FILENAME)
     return fs.existsSync(pathFile)
 }
-console.log(pathFolder)
+
 module.exports = {
     checkInitSystem,
     initSystem
