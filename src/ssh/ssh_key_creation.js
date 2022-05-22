@@ -8,8 +8,7 @@ const keygen = require('ssh-keygen-lite');
 
 const {
     FILE_ALREADY_EXISTS,
-} = require('../constants/global')
-
+} = require('../constants/global');
 
 
 function sshKeygen(location, opts) {
