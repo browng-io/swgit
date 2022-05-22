@@ -1,4 +1,4 @@
-name: Build app for all OSs
+name: Build for all OSs
 
 on: 
   push:
