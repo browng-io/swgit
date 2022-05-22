@@ -26,7 +26,6 @@ let testCases = [
         },
         check:(data) => {
             let stringData = data.toString('utf8')
-            console.log(stringData)
             assert.equal(stringData.includes("v"), true)
             assert.notEqual(stringData, null)
             assert.notEqual(stringData, '')
