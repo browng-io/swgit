@@ -23,14 +23,27 @@ function runCommandWithGit(command) {
     })
 }
 
-describe('cli:bin index ', function () { 
-    it(`--help`, function () {
-        return runCommandWithGit('--help').then(data => {
+let testCases = [
+    {
+        name:'--help',
+        stub: (check)=> {
+            return runCommandWithGit('--help').then(data => {
+                check(data)
+            })
+        },
+        check:(data) => {
             let stringData = data.toString('utf8')
             assert.notEqual(stringData, '')
             assert.notEqual(stringData, null)
             assert.notEqual(stringData, undefined)
+        }
+    }
+]
+
+describe('cli:bin index ', function () { 
+    testCases.forEach(element => {
+        it(element.name, function () {
+            return element.stub(element.check);
         })
     })
-
 })
