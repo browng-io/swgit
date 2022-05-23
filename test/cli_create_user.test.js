@@ -8,6 +8,7 @@ let testCases = [
     {
         name:'OK',
         stub: (check)=> {
+            let user = randomUser()
             return runCommandWithGit(`-a.username=${user.username} -a.email=${user.email}`).then(data => {
                 check(data)
             })
