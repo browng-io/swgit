@@ -16,7 +16,7 @@ runCreateUserTest(user).then(data => {
                 })
             },
             check: (data) => {
-                var userResult = JSON.parse(data.toString('utf8'));
+                var userResult = data.toString('utf8')
                 console.log("banylog", user)
                 assert.notEqual(userResult, '')
                 assert.notEqual(userResult, null)
