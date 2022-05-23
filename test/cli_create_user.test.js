@@ -172,12 +172,7 @@ function testCliUserCreation(user) {
         describe('cli:create user', function () { 
             testCases.forEach(element => {
                 it(element.name, function () {
-                    return element.stub((data)=> {
-                        element.check(data)
-                        if (element.name === 'OK') {
-                            resolve(user)
-                        }
-                    });
+                    return element.stub(element.check);
                 })
             })
         })

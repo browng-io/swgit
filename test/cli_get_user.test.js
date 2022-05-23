@@ -1,12 +1,13 @@
 const assert = require('assert');
 const { USERNAME_EMPTY, EMAIL_EMPTY } = require('../src/constants/global');
 const { toMessage } = require('../src/utils/binding');
-const testCliUserCreation = require('./cli_create_user.test');
+const runCreateUserTest = require('./create_user.test');
 const { runCommandWithGit, randomUser } = require('./util');
 
 let user = randomUser();
 
-testCliUserCreation(user).then(data => {
+// runCreateUserTest
+runCreateUserTest(user).then(data => {
     console.log("banylog", data)
     let testCases = [
         {
