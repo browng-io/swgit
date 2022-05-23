@@ -25,7 +25,7 @@ testCliUserCreation(user).then(data => {
         }
     ]
     
-    describe('cli:create user', function () { 
+    describe('cli:get user info', function () { 
         testCases.forEach(element => {
             it(element.name, function () {
                 return element.stub(element.check);
