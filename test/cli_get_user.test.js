@@ -33,6 +33,7 @@ runCreateUserTest(user).then(data => {
             },
             check: (data) => {
                 var userResult = data.toString('utf8')
+                console.log("banylog", userResult)
                 assert.notEqual(userResult, '')
                 assert.notEqual(userResult, null)
                 assert.notEqual(userResult, undefined)
