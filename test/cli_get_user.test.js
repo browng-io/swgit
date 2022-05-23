@@ -7,6 +7,7 @@ const { runCommandWithGit, randomUser } = require('./util');
 let user = randomUser();
 
 testCliUserCreation(user).then(data => {
+    console.log("banylog", data)
     let testCases = [
         {
             name: "OK",
