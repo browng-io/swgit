@@ -1,3 +1,4 @@
+> 🚧 This is still in development, and not ready for general use.
 
 <p align="center" style="margin-top: 35px !important; margin-bottom: 25px !important;">
   <img height="60" src="./assets/doc_images/logo.png" />
@@ -9,8 +10,6 @@
 [![version](https://img.shields.io/badge/version-1.1.0-yellow.svg)](https://semver.org)
 
 - CLI - Easy using git with multiple accounts.
-
-> 🚧 This is still in development, and not ready for general use.
 
 ## Documents
 - [How to use](./docs/how-to-use.md)
