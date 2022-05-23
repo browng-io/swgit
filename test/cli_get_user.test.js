@@ -11,7 +11,7 @@ testCliUserCreation(user).then(data => {
         {
             name: "OK",
             stub: (check) => {
-                return runCommandWithGit(`-g=${user.username}`).then(data => {
+                return runCommandWithGit(`-g=${data.username}`).then(data => {
                     check(data)
                 })
             },
