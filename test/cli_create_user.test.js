@@ -5,7 +5,7 @@ const { toMessage } = require('../src/utils/binding');
 const { runCommandWithGit, randomUser } = require('./util');
 
 function testCliUserCreation(user) {
-    return Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         let testCases = [
             {
                 name:'OK',
