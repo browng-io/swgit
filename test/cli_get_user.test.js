@@ -53,7 +53,53 @@ runCreateUserTest(user).then(data => {
                 assert.notEqual(userResult, undefined)
                 assert.equal(userResult.includes(toMessage(USER_DOES_NOT_EXISTS)), true)
             }
-        }
+        },
+        {
+            name: "OK with full parameter",
+            stub: (check) => {
+                return runCommandWithGit(`--get=${data.username}`).then(data => {
+                    check(data)
+                })
+            },
+            check: (data) => {
+                var userResult = data.toString('utf8')
+                assert.notEqual(userResult, '')
+                assert.notEqual(userResult, null)
+                assert.notEqual(userResult, undefined)
+                assert.equal(userResult.includes(user.username), true)
+                assert.equal(userResult.includes(user.email), true)
+            }
+        },
+        {
+            name: "username empty with full parameter",
+            stub: (check) => {
+                return runCommandWithGit(`--get`).then(data => {
+                    check(data)
+                })
+            },
+            check: (data) => {
+                var userResult = data.toString('utf8')
+                assert.notEqual(userResult, '')
+                assert.notEqual(userResult, null)
+                assert.notEqual(userResult, undefined)
+                assert.equal(userResult.includes("exited"), true)
+            }
+        },
+        {
+            name: "user not found with full parameter",
+            stub: (check) => {
+                return runCommandWithGit(`--get=<user_notfound>`).then(data => {
+                    check(data)
+                })
+            },
+            check: (data) => {
+                var userResult = data.toString('utf8')
+                assert.notEqual(userResult, '')
+                assert.notEqual(userResult, null)
+                assert.notEqual(userResult, undefined)
+                assert.equal(userResult.includes(toMessage(USER_DOES_NOT_EXISTS)), true)
+            }
+        },
     ]
     
     describe('cli:get user info', function () { 
