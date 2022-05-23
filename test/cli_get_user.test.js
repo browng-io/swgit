@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { USERNAME_EMPTY, EMAIL_EMPTY, USER_DOES_NOT_EXISTS } = require('../src/constants/global');
+const { USER_DOES_NOT_EXISTS } = require('../src/constants/global');
 const { toMessage } = require('../src/utils/binding');
 const runCreateUserTest = require('./create_user.test');
 const { runCommandWithGit, randomUser } = require('./util');
