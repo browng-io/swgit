@@ -21,8 +21,8 @@ runCreateUserTest(user).then(data => {
                 assert.notEqual(userResult, '')
                 assert.notEqual(userResult, null)
                 assert.notEqual(userResult, undefined)
-                assert.equal(userResult.username, user.username)
-                assert.equal(userResult.email, user.email)
+                assert.equal(userResult.includes(user.username), true)
+                assert.equal(userResult.includes(user.email), true)
             }
         }
     ]
