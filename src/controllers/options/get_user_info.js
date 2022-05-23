@@ -10,7 +10,7 @@ const {
 
 function getUserInfo(username) {
     const store = new Store(db)
-    if (!Boolean(username)) {
+    if (!Boolean(username) || username === true) {
         log.user.error(USERNAME_EMPTY)
         return USERNAME_EMPTY
     }
