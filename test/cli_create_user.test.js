@@ -174,7 +174,7 @@ function testCliUserCreation(user) {
                 it(element.name, function () {
                     return element.stub((data)=> {
                         element.check(data)
-                        resolve(data)
+                        resolve(user)
                     });
                 })
             })
