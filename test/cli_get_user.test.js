@@ -17,7 +17,7 @@ testCliUserCreation(user).then(data => {
             },
             check: (data) => {
                 let stringData = data.toString('utf8')
-                console.log(stringData)
+                console.log("banylog", stringData)
                 assert.notEqual(stringData, '')
                 assert.notEqual(stringData, null)
                 assert.notEqual(stringData, undefined)
