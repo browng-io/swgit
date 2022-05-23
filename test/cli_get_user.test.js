@@ -6,9 +6,7 @@ const { runCommandWithGit, randomUser } = require('./util');
 
 let user = randomUser();
 
-// runCreateUserTest
 runCreateUserTest(user).then(data => {
-    console.log("banylog", data)
     let testCases = [
         {
             name: "OK",
@@ -18,11 +16,13 @@ runCreateUserTest(user).then(data => {
                 })
             },
             check: (data) => {
-                let stringData = data.toString('utf8')
-                console.log("banylog", stringData)
-                assert.notEqual(stringData, '')
-                assert.notEqual(stringData, null)
-                assert.notEqual(stringData, undefined)
+                var userResult = JSON.parse(data.toString('utf8'));
+                console.log("banylog", user)
+                assert.notEqual(userResult, '')
+                assert.notEqual(userResult, null)
+                assert.notEqual(userResult, undefined)
+                assert.equal(userResult.username, user.username)
+                assert.equal(userResult.email, user.email)
             }
         }
     ]
