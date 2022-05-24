@@ -5,6 +5,7 @@ const log = require('../../utils/log');
 const { 
     USERNAME_EMPTY,
     USER_DOES_NOT_EXISTS,
+    USER_DELETED
 } = require('../../constants/global')
 
 
@@ -20,6 +21,7 @@ function deleteUser(username) {
         log.debug.error(USER_DOES_NOT_EXISTS)
         return USER_DOES_NOT_EXISTS
     }
+    log.user.success(USER_DELETED)
     return store.deleteUser(username);
     
 }

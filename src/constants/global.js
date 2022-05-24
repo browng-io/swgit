@@ -28,6 +28,7 @@ const constants = {
     USER_DEFAULT_EMPTY: 'USER_DEFAULT_EMPTY',
 
     USER_CREATED: 'USER_CREATED',
+    USER_DELETED: 'USER_DELETED',
 }
 
 module.exports = constants;
