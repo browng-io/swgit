@@ -25,12 +25,12 @@ async function createNewUser({
 }) {
     const store = new Store(db)
 
-    if (!username || username === "") {
+    if (!username || username === "" || username === true) {
         log.user.error(USERNAME_EMPTY)
         return USERNAME_EMPTY
     }
 
-    if (!email || email === "" ) {
+    if (!email || email === "" || email === true    ) {
         log.user.error(EMAIL_EMPTY)
         return EMAIL_EMPTY
     }
