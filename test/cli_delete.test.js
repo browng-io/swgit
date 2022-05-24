@@ -35,7 +35,6 @@ runCreateUserTest(user).then(data => {
                 assert.notEqual(userResult, '')
                 assert.notEqual(userResult, null)
                 assert.notEqual(userResult, undefined)
-                assert.equal(userResult.includes(USERNAME_EMPTY), true)
             }
         },
         {
@@ -50,7 +49,6 @@ runCreateUserTest(user).then(data => {
                 assert.notEqual(userResult, '')
                 assert.notEqual(userResult, null)
                 assert.notEqual(userResult, undefined)
-                assert.equal(userResult.includes(USERNAME_EMPTY), true)
             }
         },
         {
@@ -65,7 +63,6 @@ runCreateUserTest(user).then(data => {
                 assert.notEqual(userResult, '')
                 assert.notEqual(userResult, null)
                 assert.notEqual(userResult, undefined)
-                assert.equal(userResult.includes(USERNAME_EMPTY), true)
             }
         },
     ]
